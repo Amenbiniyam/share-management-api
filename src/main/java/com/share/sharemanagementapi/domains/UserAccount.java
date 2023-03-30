@@ -1,5 +1,6 @@
 package com.share.sharemanagementapi.domains;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
@@ -39,9 +40,10 @@ public class UserAccount {
 
     @Column(nullable = false)
     @NotNull(message = "Password must be set")
-    @Size(min = 4, max =8 , message = "Password must be between 4 and 8 characters")
+    //@Size(min = 4, max =8 , message = "Password must be between 4 and 8 characters")
     @Pattern(regexp = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d).+$",
             message = "Password must contain at least one uppercase letter, one lowercase letter, and one digit")
+    //@JsonProperty("*****")
     private String password;
 
     @Column(nullable = false)
