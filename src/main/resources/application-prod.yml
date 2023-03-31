@@ -1,6 +1,6 @@
 spring:
   datasource:
-    url: jdbc:postgresql://containers-us-west-46.railway.app:6883/share_db
+    url: jdbc:postgresql://containers-us-west-46.railway.app:6883/railway
     username: postgres
     password: 6GuIqjmJokMUxABiuIRk
     name: share-management-api
