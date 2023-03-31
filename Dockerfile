@@ -1,4 +1,4 @@
-FROM maven:latest AS maven
+FROM maven AS maven
 LABEL MAINTAINER="BINIYAM"
 # Create a folder called 'app' and move to that folder
 WORKDIR /usr/src/app

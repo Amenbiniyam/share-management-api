@@ -69,6 +69,7 @@
     </dependencies>
 
     <build>
+        <finalName>share-management-api</finalName>
         <plugins>
             <!-- https://www.baeldung.com/spring-boot-fix-the-no-main-manifest-attribute -->
             <plugin>
