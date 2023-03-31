@@ -3,7 +3,7 @@ spring:
     url: jdbc:postgresql://containers-us-west-46.railway.app:6883/share_db
     username: postgres
     password: 6GuIqjmJokMUxABiuIRk
-    name: share-api
+    name: share-management-api
 
   sql:
     init:
