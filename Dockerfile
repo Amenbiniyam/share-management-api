@@ -1,4 +1,4 @@
-FROM maven:latest AS maven
+FROM maven AS maven
 LABEL MAINTAINER="BINIYAM"
 
 WORKDIR /usr/src/app
