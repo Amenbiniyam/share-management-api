@@ -3,6 +3,7 @@ package com.share.sharemanagementapi.services;
 import com.share.sharemanagementapi.domains.UserAccount;
 import com.share.sharemanagementapi.repositories.UserAccountRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -13,6 +14,8 @@ public class UserAccountService {
     @Autowired
     private UserAccountRepository userAccountRepository;
 
+    @Autowired
+    private BCryptPasswordEncoder bCryptPasswordEncoder;
     // this method accept Shareholders Object and return Shareholders
     public UserAccount registerUserAccount(UserAccount userAccount) throws Exception {
        if(userAccount == null){
@@ -20,6 +23,15 @@ public class UserAccountService {
        }
         return userAccountRepository.save(userAccount);
 
+    }
+
+    // lOGIN FUNCTIONALITY
+    public UserAccount  login(String username, String password) {
+        UserAccount userAccount = userAccountRepository.findByUsername(username);
+        if (userAccount != null && bCryptPasswordEncoder.matches(password, userAccount.getPassword())) {
+            return userAccount;
+        }
+        return null;
     }
 
     public Iterable<UserAccount> getAllUserAccounts() {
