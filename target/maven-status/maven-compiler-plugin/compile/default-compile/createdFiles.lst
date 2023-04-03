@@ -1,0 +1,6 @@
+com\share\sharemanagementapi\ShareManagementApiApplication.class
+com\share\sharemanagementapi\domains\UserAccount.class
+com\share\sharemanagementapi\repositories\UserAccountRepository.class
+com\share\sharemanagementapi\services\UserAccountService.class
+com\share\sharemanagementapi\utils\AppConfig.class
+com\share\sharemanagementapi\controllers\UserAccountController.class
