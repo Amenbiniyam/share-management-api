@@ -15,7 +15,7 @@ public class ShareholderController {
 
     @Autowired
     private ShareholderService shareholderService;
-    @CrossOrigin(origins = "http://localhost:4200")
+   // @CrossOrigin(origins = "http://localhost:4200")
 
     @PostMapping("/api/shareholders")
     public ResponseEntity<?> createShareholder(@RequestBody Shareholder shareholder) throws Exception {
@@ -43,7 +43,7 @@ public class ShareholderController {
 //        return shareholderService.getAll_Shareholders();
 ////        return accountRepository.findAll();
 //    }
-    @CrossOrigin(origins = "http://localhost:4200")
+    //@CrossOrigin(origins = "http://localhost:4200")
     @GetMapping("/shareholder/{id}")
     public ResponseEntity<Shareholder> getUser (@PathVariable("id") Long id) {
         return new ResponseEntity<>(shareholderService.getshareholder(id), HttpStatus.OK);

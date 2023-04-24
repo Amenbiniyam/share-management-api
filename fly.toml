@@ -1,26 +1,5 @@
-# fly.toml file generated for share-management-api on 2023-04-03T12:54:01+03:00
+# fly.toml file generated for share-management-api on 2023-04-24T23:38:08+03:00
 
 app = "share-management-api"
-kill_signal = "SIGINT"
-kill_timeout = 5
+kill_timeout = 0
 primary_region = "sea"
-
-[env]
-  PORT = "8080"
-
-[[services]]
-  protocol = "tcp"
-  internal_port = 8080
-  processes = ["app"]
-
-  [[services.ports]]
-    port = 80
-    handlers = ["http"]
-
-  [[services.ports]]
-    port = 443
-    handlers = ["tls", "http"]
-  [services.concurrency]
-    type = "connections"
-    hard_limit = 25
-    soft_limit = 20

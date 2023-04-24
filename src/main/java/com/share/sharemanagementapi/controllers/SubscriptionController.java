@@ -38,7 +38,7 @@ public class SubscriptionController {
 //                    .body("{\"error\":" + ex.getMessage() + "}");
 //        }
 //    }
-@CrossOrigin(origins = "http://localhost:4200")
+//@CrossOrigin(origins = "http://localhost:4200")
 @PostMapping("/api/subscription")
 public Subscription createSubscription(@RequestBody SubscriptionDTO subscriptionDto) {
     return subscriptionService.createSubscription(subscriptionDto);
@@ -87,7 +87,7 @@ public Subscription createSubscription(@RequestBody SubscriptionDTO subscription
 //        return shareholderService.getAll_Shareholders();
 ////        return accountRepository.findAll();
 //    }
-@CrossOrigin(origins = "http://localhost:4200")
+//@CrossOrigin(origins = "http://localhost:4200")
     @GetMapping("/api/subscription")
     public ResponseEntity<List<Subscription>> getAllShareholders () {
         return new ResponseEntity<>(subscriptionService.getAll_Subscription(), HttpStatus.OK);
