@@ -18,7 +18,7 @@ public class UserAccountController {
     @Autowired
     private BCryptPasswordEncoder passwordEncoder;
     @PostMapping("/api/useraccount")
-    public ResponseEntity<?> createShareholder(@RequestBody UserAccount userAccount) throws Exception {
+    public ResponseEntity<?> createUserAccount(@RequestBody UserAccount userAccount) throws Exception {
         try {
 
             String encodedPassword = passwordEncoder.encode(userAccount.getPassword());
@@ -34,6 +34,7 @@ public class UserAccountController {
                     .body("{\"error\":" + ex.getMessage() + "}");
         }
     }
+
 
     @GetMapping("/api/useraccounts")
     public Iterable<UserAccount> getAllUserAccounts() {
